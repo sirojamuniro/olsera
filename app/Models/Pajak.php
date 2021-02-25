@@ -19,7 +19,11 @@ class Pajak extends Model
     protected $appends = [
         'rate'
     ];
-
+    
+    public function item()
+    {
+        return $this->belongsTo(item::class, 'id', 'id');
+    }
 
     public function getRateAttribute()
     {

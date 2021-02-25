@@ -20,7 +20,13 @@ class Item extends Model
     protected $appends = [
         'pajak'
     ];
+    
+    public function tax()
+    {
 
+        return $this->hasMany(Pajak::class, 'id');
+
+    }
 
     public function getPajakAttribute()
     {
