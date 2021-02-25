@@ -24,7 +24,9 @@ class Item extends Model
 
     public function getPajakAttribute()
     {
-        return Pajak::get();
+        $total = Pajak::count();
+
+        return $total >= 2 ? Pajak::get(): null;
 
     }
 }
